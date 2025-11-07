@@ -11,136 +11,126 @@
 
   <style>
     :root{
-      /* Paleta formal */
-      --bg-1:#0b1020;            /* azul petróleo profundo */
-      --bg-2:#131a2c;            /* azul oscuro */
-      --pri-1:#2b6cb0;           /* azul corporativo */
-      --pri-2:#8696b0;           /* acero suave */
-      --acc-1:#cfae56;           /* dorado sobrio */
-      --err-1:#dc6b6b;           /* rojo tenue */
+      /* Paleta formal clara */
+      --bg-1:#f8fafc;           /* blanco azulado */
+      --bg-2:#e2e8f0;           /* gris perla */
+      --pri-1:#2b6cb0;          /* azul profesional */
+      --pri-2:#3b82f6;          /* azul medio */
+      --acc-1:#cfae56;          /* dorado elegante */
+      --err-1:#d9534f;          /* rojo tenue */
+      --text:#1e293b;           /* gris azulado oscuro */
+      --muted:#64748b;
       --white:#ffffff;
-      --muted:#a7b0c0;
-      --glass-bg: rgba(255,255,255,.04);
-      --glass-bd: rgba(255,255,255,.14);
+      --glass-bg: rgba(255,255,255,.75);
+      --glass-bd: rgba(0,0,0,.08);
       --radius: 16px;
-      --shadow-1: 0 10px 30px rgba(0,0,0,.35);
-      --shadow-2: 0 16px 50px rgba(0,0,0,.45);
+      --shadow-1: 0 10px 30px rgba(0,0,0,.1);
+      --shadow-2: 0 16px 50px rgba(0,0,0,.15);
     }
 
-    /* ===== Fondo con gradiente sutil ===== */
     body{
-      display:flex; flex-direction:column; min-height:100vh; color:var(--white);
+      display:flex; flex-direction:column; min-height:100vh; color:var(--text);
       background:
-        radial-gradient(900px 600px at -10% -10%, rgba(207,174,86,.08), transparent 60%),
-        radial-gradient(900px 600px at 110% 10%, rgba(43,108,176,.10), transparent 55%),
+        radial-gradient(1000px 700px at -10% -10%, rgba(207,174,86,.05), transparent 60%),
+        radial-gradient(1000px 700px at 110% 10%, rgba(43,108,176,.05), transparent 55%),
         linear-gradient(135deg, var(--bg-1), var(--bg-2));
-      background-attachment: fixed;
     }
 
-    /* ===== Navbar sólida y elegante ===== */
+    /* ===== Navbar ===== */
     .navbar{
-      background: linear-gradient(90deg, rgba(19,26,44,.95), rgba(19,26,44,.9));
-      border-bottom:1px solid rgba(255,255,255,.06);
+      background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
       box-shadow: var(--shadow-2);
-      backdrop-filter: blur(6px);
     }
     .navbar-brand{
       font-weight:700; letter-spacing:.3px;
-      color:#e7edf6 !important;
+      color:var(--white)!important;
     }
-    .navbar .bi{
-      color: var(--acc-1);
-    }
+    .navbar .bi{ color: var(--acc-1); }
 
     /* ===== Contenedor principal ===== */
     main{ flex-shrink:0; }
 
-    /* ===== Tarjeta con “glass” discreto ===== */
+    /* ===== Tarjeta ===== */
     .card-glass{
       background: var(--glass-bg);
       border:1px solid var(--glass-bd);
       border-radius: var(--radius);
       box-shadow: var(--shadow-1);
-      backdrop-filter: blur(8px);
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
     .card-glass:hover{
       transform: translateY(-2px);
-      box-shadow: 0 18px 50px rgba(0,0,0,.55);
-      border-color: rgba(255,255,255,.22);
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
     }
 
-    /* ===== Título con degradado sobrio ===== */
+    /* ===== Título con gradiente ===== */
     .title-gradient{
-      background: linear-gradient(90deg, var(--acc-1), #e9d8a6 35%, var(--pri-1) 80%);
+      background: linear-gradient(90deg, var(--pri-2), var(--pri-1));
       -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow: 0 1px 16px rgba(0,0,0,.25);
+      text-shadow: 0 1px 16px rgba(43,108,176,.15);
     }
-    .lead-muted{ color:var(--muted);}
-    .tiny-muted{ color:#9aa5b3; }
+    .lead-muted{ color:var(--muted); }
+    .tiny-muted{ color:#94a3b8; }
 
-    /* ===== Textarea estilizada ===== */
+    /* ===== Textarea ===== */
     #textoOperacion{
-      background: rgba(13,19,36,.6); color:var(--white);
-      border:1px solid rgba(255,255,255,.12);
+      background: var(--white);
+      color:var(--text);
+      border:1px solid rgba(0,0,0,.12);
       border-radius: calc(var(--radius) - 6px);
-      transition: border-color .2s ease, box-shadow .2s ease, transform .08s ease;
+      transition: border-color .2s ease, box-shadow .2s ease;
     }
     #textoOperacion::placeholder{
-      color:#94a3b8;
-      opacity:.9;
+      color:#9ca3af;
     }
     #textoOperacion:focus{
-      border-color: rgba(43,108,176,.65);
-      box-shadow: 0 0 0 4px rgba(43,108,176,.18), inset 0 0 0 1px rgba(255,255,255,.04);
-      transform: translateY(-1px);
-      outline: none;
+      border-color: var(--pri-2);
+      box-shadow: 0 0 0 4px rgba(59,130,246,.15);
+      outline:none;
     }
 
-    /* ===== Botón principal sobrio ===== */
+    /* ===== Botón ===== */
     #btnCalcular{
-      background: linear-gradient(90deg, var(--pri-1), #315e8e);
-      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
+      border:none;
       border-radius: 12px;
-      color:#f0f4f8;
-      box-shadow: 0 10px 24px rgba(43,108,176,.25), inset 0 -1px 0 rgba(255,255,255,.05);
-      transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+      color:var(--white);
+      box-shadow: 0 10px 20px rgba(59,130,246,.25);
+      transition: transform .1s ease, filter .2s ease;
     }
-    #btnCalcular:hover{ filter: brightness(1.04); box-shadow: 0 14px 30px rgba(43,108,176,.32); }
-    #btnCalcular:active{ transform: scale(.99); }
-    #btnCalcular .bi{ transform: translateY(1px); color:#e7edf6; }
+    #btnCalcular:hover{ filter: brightness(1.07); }
+    #btnCalcular:active{ transform: scale(.98); }
+    #btnCalcular .bi{ transform: translateY(1px); }
 
-    /* ===== Alertas con colores discretos ===== */
+    /* ===== Alertas ===== */
     .alert{
-      border:1px solid rgba(255,255,255,.16);
       border-radius: 12px;
     }
     .alert-success{
-      background: rgba(207,174,86,.10);
-      border-color: rgba(207,174,86,.35);
-      color:#f7f0d6;
+      background: rgba(207,174,86,.15);
+      border:1px solid rgba(207,174,86,.35);
+      color:#856404;
     }
     .alert-danger{
-      background: rgba(220,107,107,.10);
-      border-color: rgba(220,107,107,.35);
-      color:#ffe9e9;
+      background: rgba(217,83,79,.12);
+      border:1px solid rgba(217,83,79,.35);
+      color:#842029;
     }
 
-    /* ===== Footer sobrio ===== */
+    /* ===== Footer ===== */
     .footer{
       margin-top:auto;
-      background: linear-gradient(90deg, rgba(11,16,32,.95), rgba(11,16,32,.85));
-      border-top:1px solid rgba(255,255,255,.06);
-      backdrop-filter: blur(6px);
+      background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
+      color:var(--white);
     }
 
-    /* ===== Decoraciones más sutiles ===== */
+    /* ===== Decoraciones suaves ===== */
     .blob{
-      position: absolute; filter: blur(70px); opacity:.25; z-index:-1;
+      position: absolute; filter: blur(70px); opacity:.2; z-index:-1;
       border-radius: 999px; pointer-events: none;
     }
-    .blob.one{ width:280px;height:280px;background: #cfae56; top:-50px; left:-40px; }
-    .blob.two{ width:240px;height:240px;background: #2b6cb0; bottom:-60px; right:-30px; }
+    .blob.one{ width:320px;height:320px;background: #cfae56; top:-60px; left:-40px; }
+    .blob.two{ width:280px;height:280px;background: #3b82f6; bottom:-60px; right:-40px; }
   </style>
 </head>
 
@@ -202,7 +192,7 @@
     </div>
   </main>
 
-  <footer class="footer text-white text-center p-4">
+  <footer class="footer text-center p-4">
     <div class="container">
       <p class="mb-0 small opacity-75">&copy; 2025 | Desarrollado por Jennifer Paola.</p>
     </div>
@@ -212,4 +202,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
