@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(async (response) => {
       if (!response.ok) {
-        throw new Error(Error HTTP ${response.status}: ${response.statusText});
+        throw new Error('Error HTTP ${response.status}: ${response.statusText}');
       }
 
       // Leer como texto para evitar el "Unexpected end of JSON input"
