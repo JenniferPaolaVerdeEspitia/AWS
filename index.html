@@ -11,49 +11,50 @@
 
   <style>
     :root {
-      /* === Variables del modo claro === */
-      --bg-1:#f8fafc;
-      --bg-2:#e2e8f0;
-      --pri-1:#2b6cb0;
-      --pri-2:#3b82f6;
-      --acc-1:#cfae56;
-      --err-1:#d9534f;
-      --text:#1e293b;
-      --muted:#64748b;
+      /* === Colores pastel (modo claro) === */
+      --bg-1:#fafafa;
+      --bg-2:#f0f4ff;
+      --pri-1:#a7c7e7;   /* azul pastel */
+      --pri-2:#c7b8ea;   /* lila pastel */
+      --acc-1:#f5d6a1;   /* dorado suave */
+      --err-1:#f2a1a1;   /* rojo rosado pastel */
+      --text:#3d405b;
+      --muted:#6c738a;
       --white:#ffffff;
       --glass-bg: rgba(255,255,255,.75);
       --glass-bd: rgba(0,0,0,.08);
       --radius: 16px;
-      --shadow-1: 0 10px 30px rgba(0,0,0,.1);
-      --shadow-2: 0 16px 50px rgba(0,0,0,.15);
+      --shadow-1: 0 10px 30px rgba(0,0,0,.08);
+      --shadow-2: 0 16px 40px rgba(0,0,0,.12);
     }
 
     body[data-theme="dark"] {
-      /* === Variables del modo oscuro === */
-      --bg-1:#0b1020;
-      --bg-2:#131a2c;
-      --pri-1:#2b6cb0;
-      --pri-2:#647acf;
-      --acc-1:#cfae56;
-      --err-1:#dc6b6b;
-      --text:#e2e8f0;
-      --muted:#a7b0c0;
-      --white:#1e293b;
-      --glass-bg: rgba(255,255,255,.05);
-      --glass-bd: rgba(255,255,255,.12);
+      /* === Colores pastel (modo oscuro) === */
+      --bg-1:#2b2d42;
+      --bg-2:#3a3d5b;
+      --pri-1:#b9d6f2;
+      --pri-2:#d5c7f2;
+      --acc-1:#f8e2b8;
+      --err-1:#f4b4b4;
+      --text:#f1f1f1;
+      --muted:#c5c5d2;
+      --white:#2b2d42;
+      --glass-bg: rgba(255,255,255,.06);
+      --glass-bd: rgba(255,255,255,.14);
       --shadow-1: 0 10px 30px rgba(0,0,0,.35);
-      --shadow-2: 0 16px 50px rgba(0,0,0,.55);
+      --shadow-2: 0 16px 50px rgba(0,0,0,.45);
     }
 
     body{
       display:flex; flex-direction:column; min-height:100vh; color:var(--text);
       background:
-        radial-gradient(1000px 700px at -10% -10%, rgba(207,174,86,.05), transparent 60%),
-        radial-gradient(1000px 700px at 110% 10%, rgba(43,108,176,.05), transparent 55%),
+        radial-gradient(1000px 700px at -10% -10%, rgba(245,214,161,.18), transparent 60%),
+        radial-gradient(1000px 700px at 110% 10%, rgba(199,184,234,.15), transparent 55%),
         linear-gradient(135deg, var(--bg-1), var(--bg-2));
       transition: background .4s ease, color .3s ease;
     }
 
+    /* ===== Navbar pastel ===== */
     .navbar{
       background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
       box-shadow: var(--shadow-2);
@@ -61,24 +62,26 @@
     }
     .navbar-brand{
       font-weight:700; letter-spacing:.3px;
-      color:var(--white)!important;
+      color:#3d405b!important;
     }
     .navbar .bi-calculator-fill{ color: var(--acc-1); }
 
+    /* ===== Botón toggle ===== */
     .theme-toggle{
-      background: rgba(255,255,255,.15);
+      background: rgba(255,255,255,.25);
       border:none;
       border-radius:50%;
       width:42px; height:42px;
       display:flex; align-items:center; justify-content:center;
-      color:white;
+      color:#3d405b;
       transition: all .3s ease;
     }
     .theme-toggle:hover{
-      background: rgba(255,255,255,.25);
+      background: rgba(255,255,255,.45);
       transform: scale(1.08);
     }
 
+    /* ===== Tarjeta glass ===== */
     .card-glass{
       background: var(--glass-bg);
       border:1px solid var(--glass-bd);
@@ -88,70 +91,78 @@
     }
     .card-glass:hover{
       transform: translateY(-2px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+      box-shadow: 0 20px 60px rgba(0,0,0,.15);
     }
 
+    /* ===== Título ===== */
     .title-gradient{
       background: linear-gradient(90deg, var(--pri-2), var(--pri-1));
       -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow: 0 1px 16px rgba(43,108,176,.15);
+      text-shadow: 0 1px 16px rgba(199,184,234,.35);
       transition: color .3s ease;
     }
     .lead-muted{ color:var(--muted); transition: color .3s ease; }
-    .tiny-muted{ color:#94a3b8; }
+    .tiny-muted{ color:#a1a3b3; }
 
+    /* ===== Textarea ===== */
     #textoOperacion{
       background: var(--white);
       color:var(--text);
-      border:1px solid rgba(0,0,0,.12);
+      border:1px solid rgba(0,0,0,.1);
       border-radius: calc(var(--radius) - 6px);
       transition: border-color .2s ease, box-shadow .2s ease, background .3s ease, color .3s ease;
     }
     #textoOperacion::placeholder{ color:#9ca3af; }
     #textoOperacion:focus{
       border-color: var(--pri-2);
-      box-shadow: 0 0 0 4px rgba(59,130,246,.15);
+      box-shadow: 0 0 0 4px rgba(199,184,234,.25);
       outline:none;
     }
 
+    /* ===== Botón principal ===== */
     #btnCalcular{
       background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
-      border:none; border-radius: 12px; color:var(--white);
-      box-shadow: 0 10px 20px rgba(59,130,246,.25);
+      border:none; border-radius: 12px; color:#3d405b;
+      box-shadow: 0 10px 20px rgba(199,184,234,.25);
       transition: transform .1s ease, filter .2s ease;
+      font-weight: 600;
     }
     #btnCalcular:hover{ filter: brightness(1.07); }
     #btnCalcular:active{ transform: scale(.98); }
 
+    /* ===== Alertas ===== */
     .alert{ border-radius: 12px; transition: background .3s ease, color .3s ease; }
     .alert-success{
-      background: rgba(207,174,86,.15);
-      border:1px solid rgba(207,174,86,.35);
-      color:#665c1f;
+      background: rgba(245,214,161,.25);
+      border:1px solid rgba(245,214,161,.45);
+      color:#5b4e2f;
     }
     .alert-danger{
-      background: rgba(217,83,79,.12);
-      border:1px solid rgba(217,83,79,.35);
-      color:#842029;
+      background: rgba(242,161,161,.2);
+      border:1px solid rgba(242,161,161,.4);
+      color:#6b2d2d;
     }
 
+    /* ===== Footer ===== */
     .footer{
       margin-top:auto;
       background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
-      color:var(--white);
+      color:#3d405b;
       transition: background .4s ease;
     }
 
+    /* ===== Decoraciones pastel ===== */
     .blob{
-      position: absolute; filter: blur(70px); opacity:.2; z-index:-1;
+      position: absolute; filter: blur(70px); opacity:.25; z-index:-1;
       border-radius: 999px; pointer-events: none;
     }
-    .blob.one{ width:320px;height:320px;background: #cfae56; top:-60px; left:-40px; }
-    .blob.two{ width:280px;height:280px;background: #3b82f6; bottom:-60px; right:-40px; }
+    .blob.one{ width:320px;height:320px;background: #f5d6a1; top:-60px; left:-40px; }
+    .blob.two{ width:280px;height:280px;background: #c7b8ea; bottom:-60px; right:-40px; }
   </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100" data-theme="light">
+  <!-- blobs decorativos -->
   <div class="blob one"></div>
   <div class="blob two"></div>
 
@@ -187,7 +198,7 @@
             </div>
 
             <div class="d-grid">
-              <button id="btnCalcular" class="btn btn-lg text-white" type="button">
+              <button id="btnCalcular" class="btn btn-lg" type="button">
                 Calcular <i class="bi bi-send ms-1"></i>
               </button>
             </div>
