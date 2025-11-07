@@ -13,15 +13,15 @@
     :root {
       /* === Colores pastel (modo claro) === */
       --bg-1:#fafafa;
-      --bg-2:#f0f4ff;
-      --pri-1:#a7c7e7;   /* azul pastel */
-      --pri-2:#c7b8ea;   /* lila pastel */
-      --acc-1:#f5d6a1;   /* dorado suave */
-      --err-1:#f2a1a1;   /* rojo rosado pastel */
-      --text:#3d405b;
-      --muted:#6c738a;
+      --bg-2:#f3ecfa;             /* fondo con toque lavanda */
+      --pri-1:#c3a3f1;            /* morado pastel */
+      --pri-2:#d9c2f4;            /* lila suave */
+      --acc-1:#f5d6a1;            /* dorado suave */
+      --err-1:#f4a8a8;            /* rojo rosado pastel */
+      --text:#3d2f58;             /* morado grisáceo */
+      --muted:#6e6585;
       --white:#ffffff;
-      --glass-bg: rgba(255,255,255,.75);
+      --glass-bg: rgba(255,255,255,.8);
       --glass-bd: rgba(0,0,0,.08);
       --radius: 16px;
       --shadow-1: 0 10px 30px rgba(0,0,0,.08);
@@ -30,15 +30,15 @@
 
     body[data-theme="dark"] {
       /* === Colores pastel (modo oscuro) === */
-      --bg-1:#2b2d42;
-      --bg-2:#3a3d5b;
-      --pri-1:#b9d6f2;
-      --pri-2:#d5c7f2;
+      --bg-1:#2e2144;
+      --bg-2:#3d2a5b;
+      --pri-1:#cbb5f4;
+      --pri-2:#dfccf8;
       --acc-1:#f8e2b8;
       --err-1:#f4b4b4;
       --text:#f1f1f1;
-      --muted:#c5c5d2;
-      --white:#2b2d42;
+      --muted:#c7c0d2;
+      --white:#2e2144;
       --glass-bg: rgba(255,255,255,.06);
       --glass-bd: rgba(255,255,255,.14);
       --shadow-1: 0 10px 30px rgba(0,0,0,.35);
@@ -49,7 +49,7 @@
       display:flex; flex-direction:column; min-height:100vh; color:var(--text);
       background:
         radial-gradient(1000px 700px at -10% -10%, rgba(245,214,161,.18), transparent 60%),
-        radial-gradient(1000px 700px at 110% 10%, rgba(199,184,234,.15), transparent 55%),
+        radial-gradient(1000px 700px at 110% 10%, rgba(195,163,241,.15), transparent 55%),
         linear-gradient(135deg, var(--bg-1), var(--bg-2));
       transition: background .4s ease, color .3s ease;
     }
@@ -62,7 +62,7 @@
     }
     .navbar-brand{
       font-weight:700; letter-spacing:.3px;
-      color:#3d405b!important;
+      color:#3d2f58!important;
     }
     .navbar .bi-calculator-fill{ color: var(--acc-1); }
 
@@ -73,7 +73,7 @@
       border-radius:50%;
       width:42px; height:42px;
       display:flex; align-items:center; justify-content:center;
-      color:#3d405b;
+      color:#3d2f58;
       transition: all .3s ease;
     }
     .theme-toggle:hover{
@@ -98,11 +98,11 @@
     .title-gradient{
       background: linear-gradient(90deg, var(--pri-2), var(--pri-1));
       -webkit-background-clip:text; background-clip:text; color:transparent;
-      text-shadow: 0 1px 16px rgba(199,184,234,.35);
+      text-shadow: 0 1px 16px rgba(195,163,241,.35);
       transition: color .3s ease;
     }
     .lead-muted{ color:var(--muted); transition: color .3s ease; }
-    .tiny-muted{ color:#a1a3b3; }
+    .tiny-muted{ color:#9f94b8; }
 
     /* ===== Textarea ===== */
     #textoOperacion{
@@ -115,15 +115,15 @@
     #textoOperacion::placeholder{ color:#9ca3af; }
     #textoOperacion:focus{
       border-color: var(--pri-2);
-      box-shadow: 0 0 0 4px rgba(199,184,234,.25);
+      box-shadow: 0 0 0 4px rgba(195,163,241,.25);
       outline:none;
     }
 
     /* ===== Botón principal ===== */
     #btnCalcular{
       background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
-      border:none; border-radius: 12px; color:#3d405b;
-      box-shadow: 0 10px 20px rgba(199,184,234,.25);
+      border:none; border-radius: 12px; color:#3d2f58;
+      box-shadow: 0 10px 20px rgba(195,163,241,.25);
       transition: transform .1s ease, filter .2s ease;
       font-weight: 600;
     }
@@ -138,8 +138,8 @@
       color:#5b4e2f;
     }
     .alert-danger{
-      background: rgba(242,161,161,.2);
-      border:1px solid rgba(242,161,161,.4);
+      background: rgba(244,168,168,.2);
+      border:1px solid rgba(244,168,168,.4);
       color:#6b2d2d;
     }
 
@@ -147,7 +147,7 @@
     .footer{
       margin-top:auto;
       background: linear-gradient(90deg, var(--pri-1), var(--pri-2));
-      color:#3d405b;
+      color:#3d2f58;
       transition: background .4s ease;
     }
 
@@ -157,7 +157,7 @@
       border-radius: 999px; pointer-events: none;
     }
     .blob.one{ width:320px;height:320px;background: #f5d6a1; top:-60px; left:-40px; }
-    .blob.two{ width:280px;height:280px;background: #c7b8ea; bottom:-60px; right:-40px; }
+    .blob.two{ width:280px;height:280px;background: #c3a3f1; bottom:-60px; right:-40px; }
   </style>
 </head>
 
